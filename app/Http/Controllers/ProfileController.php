@@ -43,7 +43,6 @@ class ProfileController extends Controller {
     * @return \Illuminate\Http\RedirectResponse
     */
    public function destroy(ProfileDeleteRequest $request) {
-      $request->validate();
       $user = $request->user();
       Auth::logout();
       $user->delete();

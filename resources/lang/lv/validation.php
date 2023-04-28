@@ -140,7 +140,7 @@ return [
    'string' => ':attribute nevar būt tukšs.',
    'timezone' => 'The :attribute must be a valid timezone.',
    'unique' => 'Šis :attribute jau ir aizņemts.',
-   'uploaded' => 'The :attribute failed to upload.',
+   'uploaded' => ':attribute nevarēja augšupielādēt.',
    'uppercase' => 'The :attribute must be uppercase.',
    'url' => 'The :attribute must be a valid URL.',
    'ulid' => 'The :attribute must be a valid ULID.',
@@ -176,7 +176,9 @@ return [
     |
     */
 
-   'attributes' => [],
+   'attributes' => [
+      'post_image' => 'Bildi'
+   ],
 
    //Profila lapas info sadaļas validācija
    'name' => [
