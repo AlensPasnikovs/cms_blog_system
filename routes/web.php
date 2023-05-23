@@ -64,3 +64,9 @@ Route::put('/post/update/{id}', [PostController::class, 'update'])->name('update
 // });
 
 Route::post('/save-theme', [ThemeController::class, 'update'])->name('save_theme');
+
+Route::get('/sso-entry', function (Request $request) {
+   // This middleware will process the token and authenticate the user
+   // You can then redirect the user to the 'tiny_mce' route
+   return redirect()->route('tiny_mce');
+})->middleware('sso');
