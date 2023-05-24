@@ -25,6 +25,12 @@ class SsoMiddleware {
 
             // Delete the token
             DB::connection('main_mysql')->table('sso_tokens')->where('token', $token)->delete();
+
+            if (Auth::check()) {
+               return redirect()->route('tiny_mce');
+            } else {
+               return redirect()->route('register');
+            }
          }
       }
       return $next($request);

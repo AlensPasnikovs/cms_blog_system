@@ -20,3 +20,4 @@ yarn-error.log
 docker-compose.yml
 node.dockerfile
 php.dockerfile
+/mig
