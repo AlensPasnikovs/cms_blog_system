@@ -51,10 +51,10 @@ Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controller
 
 //tiny_mce
 // Route::middleware('auth')->group(function () {
-Route::get('/', function () {
-   return redirect()->route('tiny_mce');
-});
-Route::get('/posts', [PostController::class, 'index'])->name('tiny_mce');
+// Route::get('/', function () {
+//    return redirect()->route('tiny_mce');
+// });
+Route::get('/', [PostController::class, 'index'])->name('tiny_mce');
 Route::post('create_post', [PostController::class, 'store'])->name('create_post');
 
 Route::get('post/{id}', [PostController::class, 'show'])->name('post_show');

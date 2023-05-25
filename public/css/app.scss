@@ -127,6 +127,9 @@ table.dataTable tbody td {
         max-width: 100%;
     }
 }
+// .video-container {
+//     max-width: 100%;
+// }
 
 #toggle-theme {
     width: 39px;
@@ -145,12 +148,4 @@ table.dataTable tbody td {
 .icon-moon,
 .icon-sun {
     font-size: 1.5rem;
-}
-
-$color-mode-type: media-query;
-
-@include color-mode(dark) {
-    .btn_dark {
-        background-color: white;
-    }
 }

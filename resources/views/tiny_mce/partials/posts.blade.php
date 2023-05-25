@@ -3,7 +3,7 @@
    <a href="{{ route('post_show', $post->id) }}" class="text-reset text-decoration-none">
       <div class="card h-100 border-0 shadow rounded-3 ">
          <div class="imgContainer">
-            <img src="/storage/photos/posts/{{ $post->image }}" class="card-img-top rounded-3">
+            <img src="/storage/photos/posts/{{ $post->image }}" class="card-img-top rounded-top-3">
          </div>
          <div class="card-body align-middle">
             <table class="w-100 h-100">
