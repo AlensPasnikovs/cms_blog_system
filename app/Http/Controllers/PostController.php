@@ -13,9 +13,10 @@ class PostController extends Controller {
     *
     * @return \Illuminate\Http\Response
     */
-   public function index() {
+   public function index(Request $request) {
       $posts = Post::all();
-      return view('tiny_mce.index', compact('posts'));
+      $timeTaken = $request->query('time_taken', 'N/A');
+      return view('tiny_mce.index', compact('posts'))->with('timeTaken', $timeTaken);
    }
    public function posts() {
       $posts = Post::all();

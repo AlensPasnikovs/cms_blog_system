@@ -7,6 +7,18 @@
 
 @section('content')
 
+@if (session()->has('time_taken'))
+<div class="row mx-sm-1 mx-lg-3 mx-xl-5 mx-0">
+   <div class="">
+      <div class="alert alert-info" style="font-size: 20px;">
+         Time taken: <strong>{{ is_numeric(session('time_taken')) ? number_format(floatval(session('time_taken')), 2) :
+            session('time_taken') }}</strong> seconds
+      </div>
+   </div>
+</div>
+@endif
+
+
 @if (Auth::check())
 <div class="row mx-sm-1 mx-lg-3 mx-xl-5 mx-0">
    <div class="">

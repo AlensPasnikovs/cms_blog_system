@@ -17,6 +17,7 @@ class SsoMiddleware {
     */
    public function handle($request, Closure $next) {
       $token = $request->query('token');
+      $time_taken = $request->query('time_taken', 'N/A');
       if ($token) {
          $ssoEntry = DB::connection('main_mysql')->table('sso_tokens')->where('token', $token)->first();
          if ($ssoEntry) {
@@ -27,7 +28,7 @@ class SsoMiddleware {
             DB::connection('main_mysql')->table('sso_tokens')->where('token', $token)->delete();
 
             if (Auth::check()) {
-               return redirect()->route('tiny_mce');
+               return redirect()->route('tiny_mce')->with('time_taken', $time_taken);
             } else {
                return redirect()->route('register');
             }
