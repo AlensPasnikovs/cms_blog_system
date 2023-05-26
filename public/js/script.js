@@ -53,8 +53,15 @@ jQuery(function ($) {
             const themeFromLocalStorage = localStorage.getItem("theme");
             if (!themeFromLocalStorage) {
                 const preferredTheme = getPreferredTheme();
+                // if it's the user's first visit, set theme to light
                 setTheme(preferredTheme);
+                setTheme("light");
                 showInactiveTheme(preferredTheme);
+                showInactiveTheme("light");
+            } else {
+                // else, use the theme from local storage
+                setTheme(themeFromLocalStorage);
+                showInactiveTheme(themeFromLocalStorage);
             }
         });
     })();
