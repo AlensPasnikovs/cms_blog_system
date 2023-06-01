@@ -16,8 +16,4 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
-/docker
-docker-compose.yml
-node.dockerfile
-php.dockerfile
-/mig
+
